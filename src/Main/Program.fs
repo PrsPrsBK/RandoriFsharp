@@ -2,9 +2,12 @@
 
 open System
 
+let tokenize (sth: string) =
+    sth.Replace("(", " ( ").Replace(")", " ) ")
+
 let reader (sth: string) =
     printfn "input is %s" sth
-    sth
+    sth |> tokenize
 
 let evaler (sth: string) =
     sprintf "evaled: %s" sth
