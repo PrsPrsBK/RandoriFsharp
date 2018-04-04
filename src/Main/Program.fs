@@ -12,12 +12,12 @@ let evaler (sth: string) =
 let printer (sth: string) =
     printfn "%s" sth
 
-let rec promptLoop () =
+let rec looper () =
     stdout.Write("prompt$ ")
     let sth = stdin.ReadLine()
     match sth with
     | "q" -> ()
-    |_ -> sth |> reader |> evaler |> printer |> promptLoop
+    |_ -> sth |> reader |> evaler |> printer |> looper
 
 [<EntryPoint>]
 let main argv =
