@@ -2,13 +2,22 @@
 
 open System
 
+let reader (sth: string) =
+    printfn "input is %s" sth
+    sth
+
+let evaler (sth: string) =
+    sprintf "evaled: %s" sth
+
+let printer (sth: string) =
+    printfn "%s" sth
+
 let rec promptLoop () =
     stdout.Write("prompt$ ")
     let sth = stdin.ReadLine()
-    printfn "input is %s" sth
     match sth with
     | "q" -> ()
-    |_ -> promptLoop()
+    |_ -> sth |> reader |> evaler |> printer |> promptLoop
 
 [<EntryPoint>]
 let main argv =
