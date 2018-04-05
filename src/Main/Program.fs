@@ -3,14 +3,14 @@
 open System
 
 let tokenize (sth: string) =
-    sth.Replace("(", " ( ").Replace(")", " ) ")
+    sth.Replace("(", " ( ").Replace(")", " ) ").Split([|" ";|], StringSplitOptions.RemoveEmptyEntries)
 
 let reader (sth: string) =
     printfn "input is %s" sth
     sth |> tokenize
 
-let evaler (sth: string) =
-    sprintf "evaled: %s" sth
+let evaler (sth: string array) =
+    sprintf "evaled: %A" sth
 
 let printer (sth: string) =
     printfn "%s" sth
