@@ -2,6 +2,19 @@
 
 open System
 
+let tryParseWith f = f >> function
+    | true, v -> Some v
+    | false, _ -> None
+
+let parseAtom = tryParseWith Int32.TryParse
+
+let (|Int|_|) = parseAtom
+
+let whichAtom (x: string) =
+    match x with
+    | Int x -> "int."
+    | _ -> "symbol."
+
 let tokenize (sth: string) =
     sth.Replace("(", " ( ").Replace(")", " ) ").Split([|" ";|], StringSplitOptions.RemoveEmptyEntries)
 
@@ -10,6 +23,8 @@ let reader (sth: string) =
     sth |> tokenize
 
 let evaler (sth: string array) =
+    for token in sth do
+        printfn "  token %s is %s" token (whichAtom token)
     sprintf "evaled: %A" sth
 
 let printer (sth: string) =
