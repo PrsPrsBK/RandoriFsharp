@@ -1,5 +1,5 @@
-﻿namespace Randori
+﻿[<AutoOpen>]
+module Randori.Say
 
-module Say =
-    let hello name =
-        sprintf "Hello %s" name
+let hello name =
+    sprintf "Hello %s" name

@@ -1,6 +1,4 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open Randori
+﻿//open Randori
 
 [<EntryPoint>]
 let main argv =
@@ -11,6 +9,6 @@ let main argv =
         Randori.LispRepl.looper()
     else
         match argv.[0] with
-        | "repl" -> LispRepl.looper()
+        | "repl" -> Randori.LispRepl.looper()
         | _ -> ()
     0 // return an integer exit code
