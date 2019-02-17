@@ -1,4 +1,4 @@
-﻿//open Randori
+open Randori
 
 [<EntryPoint>]
 let main argv =
