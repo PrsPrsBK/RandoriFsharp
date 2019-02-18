@@ -10,5 +10,6 @@ let main argv =
     else
         match argv.[0] with
         | "repl" -> Randori.LispRepl.looper()
+        | "rot13" -> Randori.Rot13.looper()
         | _ -> ()
     0 // return an integer exit code
