@@ -1,6 +1,7 @@
+DesignTimeBuild/
 src/*/bin/
 src/*/obj/
 
 # Paket
-.paket/paket.bootstrapper.exe
+.paket/paket.exe
 
