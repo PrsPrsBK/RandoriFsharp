@@ -7,4 +7,4 @@ test/*/obj/
 
 # Paket
 .paket/paket.exe
-
+packages/
